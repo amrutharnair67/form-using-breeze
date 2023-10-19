@@ -54,6 +54,9 @@
             <td>
                 age
             </td>
+            <td>
+                Action
+            </td>
         </tr>
         @if ($table->count() ==0)
         No records found
@@ -64,6 +67,7 @@
                     <td>{{$rec->name}}</td>
                     <td>{{$rec->class}}</td>
                     <td>{{$rec->age}}</td>
+                    <td colspan="2">Edit| <a href="{{route('delete',$rec->id)}}">Delete</a></td>
                 </tr>
             
                 @endforeach

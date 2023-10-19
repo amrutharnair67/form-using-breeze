@@ -90,8 +90,9 @@ class CrudController extends Controller
      * @param  \App\Models\crud  $crud
      * @return \Illuminate\Http\Response
      */
-    public function destroy(crud $crud)
+    public function destroy(string $id)
     {
-        //
+        DB::table('cruds')->where('id',$id)->delete();
+        return redirect()->back();
     }
 }

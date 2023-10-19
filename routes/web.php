@@ -23,7 +23,9 @@ Route::get('/',function(){
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/delete{id}',[CrudController::class,'destroy'])->name('delete');
+Route::get('/update',[CrudController::class,'update'])->name('update');
+Route::get('/viewdata/{id}',[CrudController::class,'show'])->name('viewdata');
 Route::get('/dashboard', [CrudController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
